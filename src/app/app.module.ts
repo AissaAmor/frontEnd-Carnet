@@ -13,11 +13,18 @@ import { CarnetComponent } from "./carnet/carnet.component";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
-import { ProfilComponent } from './profil/profil.component';
-import { PipePipe } from './pipe.pipe';
+import { ProfilComponent } from "./profil/profil.component";
+import { PipePipe } from "./pipe/pipe.pipe";
+import { AlphabetPipe } from "./pipe/alphabet.pipe";
 
 @NgModule({
-  declarations: [AppComponent, CarnetComponent, ProfilComponent, PipePipe],
+  declarations: [
+    AppComponent,
+    CarnetComponent,
+    ProfilComponent,
+    PipePipe,
+    AlphabetPipe
+  ],
   imports: [
     BrowserModule,
     FormsModule,

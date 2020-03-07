@@ -13,28 +13,43 @@
           autocomplete="off"
           placeholder="&#61442;  Start searching "
         />
-        <p class="alph text-danger">
+        <!-- <div class="col-sm-12">
+          <input
+            type="text"
+            [(ngModel)]="searchText"
+            class="form-control"
+            placeholder="Start searching"
+          />
+        </div> -->
+        <label *ngFor="let alpha of alphTab">
+          <a (click)="alphSearch(alpha.char)" class="text-danger p-2">{{
+            alpha.char
+          }}</a>
+        </label>
+        <!-- <p class="alph text-danger">
           A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-        </p>
+        </p> -->
         <!-- </div> -->
       </div>
     </mat-card-content>
-    <div class="row ">
-      <div
-        class="col-4"
-        *ngFor="let prof of profils | filter: searchText"
-        (click)="getItems(prof)"
-      >
-        <mat-card class="profileCard">
-          <div class="row">
-            <div class="col-4">
-              <img src="../../assets/icons/profile.png" class="profile" />
+    <div class="container">
+      <div class="row ">
+        <div
+          class="col-4"
+          *ngFor="let prof of table | pipe: searchText"
+          (click)="getItems(prof)"
+        >
+          <mat-card class="profileCard mb-3">
+            <div class="row">
+              <div class="col-4">
+                <img src="../../assets/icons/profile.png" class="profile" />
+              </div>
+              <div class="col-md-6 col-xs-12 ml-4">
+                <span> {{ prof.name }} <br />{{ prof.number }} </span>
+              </div>
             </div>
-            <div class="col-6 ml-4">
-              <span> {{ prof.name }} <br />{{ prof.number }} </span>
-            </div>
-          </div>
-        </mat-card>
+          </mat-card>
+        </div>
       </div>
     </div>
   </mat-card>
@@ -43,13 +58,18 @@
 
   <div class="profilDetail" *ngIf="clickShow">
     <mat-card class="box">
-      <mat-card-content> </mat-card-content>
       <mat-card class="profileCard">
         <div class="row">
           <div class="col-4">
             <img src="../../assets/icons/profile.png" class="profile" />
           </div>
-          <div class="col-6 ml-4">{{ profile.name }} {{ profile.number }}</div>
+          <div
+            class="col-6 ml-4"
+            style="font-size: 20px; color: gray;
+          "
+          >
+            {{ profile.name }} {{ profile.number }}
+          </div>
         </div>
         <img class="image" src="../../assets/icons/skype.png" />
         <img class="image" src="../../assets/icons/phone.png" />
@@ -57,31 +77,4 @@
       </mat-card>
     </mat-card>
   </div>
-  <!--modal Profile-->
-  <!-- <div
-    mdbModal
-    #basicModal="mdbModal"
-    class="modal fade"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="myBasicModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button
-            type="button"
-            class="close pull-right"
-            aria-label="Close"
-            (click)="basicModal.hide()"
-          >
-            <span aria-hidden="true">×</span>
-          </button>
-          <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
-        </div>
-        <div class="modal-body"></div>
-      </div>
-    </div>
-  </div> -->
 </div>

@@ -39,6 +39,7 @@
   -ms-transform: scale(1);
   z-index: 5;
   max-width: 1000px;
+  background-color: #f8f8f8 !important ;
 }
 .box.back {
   transform: scale(0.95);
@@ -103,6 +104,9 @@ h1 {
 }
 span {
   color: gray;
+  font-size: 17px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 /* .profileCard {
   width: 300px;
@@ -111,4 +115,7 @@ span {
 .image {
   margin-top: 20px;
   margin-left: 40px;
+}
+a {
+  font-size: 14px;
 }
